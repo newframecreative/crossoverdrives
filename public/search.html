@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+        body{
+  font-family: 'HelveticaRegular',Helvetica,Arial;
+  font-size: 12px;
+  line-height: 1.5;
+  background-color: #F2F2F2;
+  padding:0;
+  margin:0;
+}
+body h2{
+  line-height: 30px;
+}
+#wrapper{
+  width:100%;
+}
+#header{
+  padding: 16px 0;
+  color: #333333;
+  text-align:center;
+}
+#header h1{
+  margin: 8px 0;
+  font-size: 28px;
+}
+#header .logo img{
+  width: 100%;
+}
+#content1 li{
+  padding: 24px 0;
+}
+table.catalogs{
+  empty-cells: show;
+   border-collapse: collapse;
+  margin-bottom: 32px;
+}
+table.catalogs td{
+  padding: 12px 24px 0 0;
+}
+a.sub{
+  padding-top: 36px;
+}
+a img{
+  border:none;
+}
+a.logo{
+  border: none;
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+}
+a.iso{
+  border: none;
+}
+a.iso img{
+  height: 80px;
+}
+.cataloglogo{
+  width: 30%;
+  float: right;
+   margin-left: 24px;
+}
+.menuW{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background: #353535;
+  box-shadow: 0px 6px 8px -2px #353535;
+  position: fixed;
+    right: 0;
+    top: 0;
+    margin-top: 0;
+}
+.menu{
+  max-width: 940px;
+  margin: 0 auto;
+}
+.menu ul{
+  margin: 0;
+  padding: 0;
+}
+.menu ul li{
+  list-style:none !important;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 16.66%;
+}
+.menu ul li ul{
+  position: absolute;
+  margin-left:-1px;
+  float: left;
+  z-index: 1000;
+  background-color: #f6f6f6;
+  width: auto;
+}
+.menu ul li ul li{
+  float: none;
+}
+.menu ul li ul > li ul{
+  left: 100%;
+  margin-top: -30px;
+}
+.menu ul li > ul li{
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid silver;
+}
+.menu ul li > ul a span{
+  border: none;
+  display: block;
+  width: 100%;
+  margin: 0px;
+  padding-right: 28px;
+}
+*+html .menu ul li > ul a span{
+  width: 150px;
+}
+* html .menu ul li > ul a span{
+  width: 150px;
+}
+.menu a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.menu a:visited{
+  color: #fff;
+}
+.menu a span{
+  padding: 10px 4px;
+  display: block;
+  text-align: center;
+}
+li.active a span{
+  color: #FFAAA3;
+}
+.menuItemH, .menu a span:hover, .actionsbtn:hover{
+  background-color: #EA5047;
+  color: #FFF;
+  transition: background-color 0.4s cubic-bezier(0.25, 0.1, 0.24, 0.6) 0s;
+  transition-property: background-color;
+  transition-duration: 0.7s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.24, 0.6);
+  transition-delay: 0s;
+}
+.menu-state-active{
+}
+#sliderW{
+  width: 100%;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+}
+#slider{
+  width: 100%;
+  background: url(images/v1-slide-1.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0 70px 0;
+}
+#teaser{
+  width: 940px;
+  height: 280px;
+  margin: auto;
+  text-align: center;
+  text-shadow: 10px 10px 25px #5B5B5B;
+  background-color:rgba(236,236,236,.75);
+}
+#teaser .content{
+  padding: 20px 40px 20px 40px;
+  line-height: 30px;
+  color: #383838;
+}
+#teaser p{
+  font-weight: normal;
+  font-size: 22px;
+}
+#contctrequest label{
+  display: block;
+}
+#teaser h2{
+  font-size: 32px;
+}
+#body{
+  max-width: 935px;
+  margin: 30px auto;
+}
+#bottom{
+  background-color: #F0F0F0;
+  border-top: 1px solid #C9C9C9;
+  color: #5D5D5D;
+  padding: 100px 0 24px 0;
+  max-width: 940px;
+  margin: auto;
+  clear:both;
+}
+#bottom a{
+  color: #5D5D5D;
+  text-decoration: none;
+}
+#bottom ul{
+  margin: 0;
+  padding:0;
+  list-style-type: none;
+}
+#bottom li{
+  line-height: 20px;
+}
+#bottom ul.socual  li{
+  padding-left: 24px;
+}
+#bottom ul.socual li:nth-child(1){
+  background: url(../../Media/Images/socialsprites.png) no-repeat 0 -22px;
+}
+#bottom ul.socual li:nth-child(2){
+  background: url(../../Media/Images/socialsprites.png) no-repeat 0 -46px;
+}
+#bottom ul.socual li:nth-child(3){
+  background: url(../../Media/Images/socialsprites.png) no-repeat 0 -70px;
+}
+#bottom .left, .bottom .right{
+  width: auto;
+}
+#bottom .left:nth-child(1){
+  width: 40%;
+}
+#footer{
+  max-width: 935px;
+  margin: auto;
+  border-top: 1px dotted #707070;
+  color: #707070;
+}
+.wc{
+  float: right;
+}
+.clearboth{
+  clear:both;
+}
+.left{
+  float:left;
+}
+.right{
+  float: right;
+}
+#bottom .button {
+  background-color: #363636;
+  background-image: linear-gradient(180deg, #434343 0%, #363636 100%);
+  border-color: #5c5c5c #1d1d1d #1d1d1d #5c5c5c;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 8px;
+  padding: 4px 8px;
+}
+#content1{
+  color: #D3D3D3;
+  background: #3f3f3f;
+  font-size: 120%;
+}
+#content1 .content {
+  color: #5D5D5D;
+  background: #F2F2F2;
+  padding: 24px 0 0 0;
+}
+.actions, .contentInner {
+  width: 945px;
+  margin: 0 auto;
+}
+#content1 .contentInner h1{
+	padding: 0 0 26px 0;
+}
+.content1Left {
+    float: left;
+    width: 250px;
+    margin: 12px 0;
+    padding: 52px 30px 0 30px;
+    text-align: center;
+    background-image: url("images/cogsRed.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.content1Middle {
+    float: left;
+    width: 250px;
+    border-left: #707070 solid 1px;
+    margin: 12px 0;
+    padding: 52px 30px 0 30px;
+    text-align: center;
+    background-image: url("images/thumbRed.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.content1Right {
+    float: right;
+    width: 250px;
+    border-left: #707070 solid 1px;
+    margin: 12px 0;
+    padding: 52px 30px 0 30px;
+    text-align: center;
+    background-image: url("images/compassRed4.png");
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+.actionsbtn {
+    background-color: #C93428;
+    border-radius: 8px 8px 8px 8px;
+  	box-shadow: 4px 6px 10px -2px #353535;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 14px auto;
+    padding: 5px;
+    width: 100px;
+}
+.actionsbtn a {
+    color: #fff;
+    text-decoration: none;
+}
+.hidden{
+  display: none;
+  visibility: hidden;
+}
+@media only screen and (max-width:1056px){
+  #teaser{
+    width: 90%;
+    margin: auto;
+  }
+  #teaser p{
+    font-size: 16px;
+  }
+  .actions, #bottom, #footer, .contentInner{
+    width: 90%;
+  }
+  #bottom{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .content1Left, .content1Middle, .content1Right{
+    width: 30%;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  #content1{
+  }
+}
+@media only screen and (max-width:572px){
+  .content1Left, .content1Middle, .content1Right{
+    width: 90%;
+    float: none;
+    border: none;
+    border-bottom: #707070 solid 1px;
+    padding: 30px 12px 12px 12px;
+  }
+  .content1Right{
+    border-bottom: none;
+  }
+  .actions{
+    padding-top: 12px;
+  }
+  .right{
+    float: none;
+    clear: both;
+  }
+  #bottom .left:nth-child(1){
+    width: 45%;
+  }
+  a.logo{
+    width: 70%;
+    margin: auto;
+  }
+  #header h1{
+    font-size: 20px;
+  }
+  #bottom{
+    border-top: none;
+    padding-top: 0;
+  }
+  #slider{
+    padding: 24px 0;
+  }
+}
+@media only screen and (max-width:494px){
+  #teaser .content {
+   	padding: 6px;
+   }
+  #teaser h2{
+   	font-size: 18px;
+   }
+  .menu a span{
+    font-size: 10px;
+    padding: 10px 0;
+  }
+  .menu ul li{
+    width:16.66%;
+  }
+  .menuW{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    z-index: 9999;
+  }
+  #header{
+    margin-top: 40px;
+    padding: 12px 0;
+  }
+  #contentInner{
+      margin-right:100px;
+      border:blue
+  }
+}
+    </style>
+    
+    
+<head>
+<title>Part Number Search | Crossover Drives</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="Shane A Collins" />
+<meta name="owner" content="scollins94@hotmail.com" />
+<meta name="generator" content="Jigsaw 1.2.1" />
+<meta content="width=device-width, initial-scale=1, minimum-scale=.2, maximum-scale=2" name="viewport" />
+<meta content="True" name="HandheldFriendly" />
+<meta content="320" name="MobileOptimized" />
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<link href="favicon.ico" rel="SHORTCUT ICON" />
+<link href="App_Themes/CrossoverDrives/default.v.1.8.css" type="text/css" rel="stylesheet" />
+<link href="App_Themes/CrossoverDrives/jquery-ui-1.9.2.custom.min_ver_307508.css" type="text/css" rel="stylesheet" />
+<script src="Media/Scripts/jquery.js" type="text/javascript"></script>
+<script src="Media/Scripts/jqueryui.js" type="text/javascript"></script>
+<script src="Media/Scripts/cookie.js" type="text/javascript"></script>
+<script src="Media/Scripts/loading.js" type="text/javascript"></script>
+<script src="Media/Scripts/jigsaw.js" type="text/javascript"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68497122-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>  class="main">
+    
+
+
+
+    
+<div id="wrapper">
+  <div class="menuW">      	
+    <div class="menu">
+      <ul>
+        <li class="root"><a title="Home" href="index.html"><span>Home</span></a></li>
+        <li class="root"><a title="Catalog" href="catalog.html"><span class="">Catalog</span></a></li>
+        <li class="root"><a title="About" href="about.html"><span class="">About Us</span></a></li>
+        <li class="root"><a title="Request a Quote" href="requestaquote.html"><span class="">Request a Quote</span></a></li>
+        <li class="root"><a title="About Us" href="contact.html"><span class="">Contact Us</span></a></li>
+        <li class="root active"><a title="Search for Parts" href="search.html"><span class="menu-state-active">Search For Parts</span></a></li>
+      </ul>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+  <div id="header">
+    <a href="index.html" class="logo sub"><img src="App_Themes/CrossoverDrives/images/Crossover-Drives-Logo3.png" style="" title="Crossover Drives"></a>
+  </div>
+  <div id="content1">
+    <div class="content">
+      <div class="contentInner">
+        <div><h1>Part Number Search Page</h1>
+        </form>
+
+
+        <form id="partSearch" onsubmit="return false;">
+    <input id="partQuery" name="search" type="text" placeholder="search" size="40" maxlength="50" autocomplete="off"/>
+    <input type="submit" value="search" />
+</form>
+<div id="partResult" aria-live="polite"></div>
+<style>
+  #partResult{margin:16px 0 8px}
+  #partResult #noresults{font-size:28px;line-height:1.3}
+  #partResult #equiv,#partResult #dpart{font-size:24px;line-height:1.3}
+  #partResult #part,#partResult #description{font-size:20px}
+  #partResult #MissingNote{font-size:16px;margin-top:8px}
+</style>
+<script>
+(function(){
+  var parts=null, f=document.getElementById('partSearch'), q=document.getElementById('partQuery'), out=document.getElementById('partResult');
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function show(term){
+    var hit=parts[term.trim().toLowerCase()];
+    if(!hit){ out.innerHTML='<div id="noresults">Invalid part number. Your part may contain special features. Please <a href="contact.html">contact us</a> and we can help find what you need!</div>'; return; }
+    out.innerHTML='<div id="equiv">The Crossover equivalent of '+esc(hit[0])+' is shown below</div>'+
+      '<div id="part">Part Number: '+esc(hit[1])+'</div>'+
+      '<div id="description">Description: '+esc(hit[2])+'</div>'+
+      '<div id="MissingNote">Email or give us call with any questions concerning the pricing and availabilty of this part.</div>';
+  }
+  f.addEventListener('submit',function(){
+    var term=q.value; if(!term.trim()) return;
+    if(parts){ show(term); return; }
+    out.textContent='Searching\u2026';
+    fetch('parts.json').then(function(r){return r.json();}).then(function(d){parts=d; show(term);})
+      .catch(function(){out.textContent='Search is unavailable right now. Please contact us for help finding a part.';});
+  });
+})();
+</script>
+
+            <form>
+            <div><h2>Note:</h2></div>
+            <ul style="list-style-type: disc;">
+                <li>For Warner and Deltran wrap spring clutch part numbers, follow the format: ###-##-###</li>
+                <li>For Warner and Deltran component part numbers, follow the format: ###-#-####</li>
+                </ul></div>
+                        <p>&nbsp;</p>
+                        <h4>ISO 9001:2008 Certified</h4>        
+                        <!--<p><a class="iso" href="http://www.iso.org/" target="_blank"><img src="App_Themes/CrossoverDrives/images/ISO-9001-sm.png" title="ISO 9001:2008"></a></p>-->
+                      </div>      
+                    </div>
+                  </div>
+                  <div id="bottom">
+                    <div class="content">
+                      <div class="inner">
+                        <div class="left">
+                          <h3>Follow Us</h3>
+                          <ul class="socual" itemscope="" itemtype="http://schema.org/Organization">
+                            <li><a itemprop="sameAs" href="https://twitter.com/crossoverdrives" target="_blank">Twitter</a></li>
+                            <li><a itemprop="sameAs" href="https://www.linkedin.com/company/8532173?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A8532173%2Cidx%3A2-1-2%2CtarId%3A1457716780241%2Ctas%3Acrossover%20dri" target="_blank">LinkedIn</a></li>
+                            <li><a itemprop="sameAs" href="https://www.facebook.com/Crossover-Drives-Inc-565557130265810/?ref=stale_email" target="_blank">Facebook</a></li>
+                          </ul>
+                        </div>
+                        <div class="left">
+                          <h3>Links</h3>
+                          <ul>
+                            <li><a href="about.html">About us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                           </ul>
+                        </div>
+                        
+                        <div class="clearboth"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="footer">
+                    <div class="content">
+                      <p>Crossover Drives, Inc. &Acirc;&copy; 2015
+                        <a class="wc" href="http://jigsaw.w3.org/css-validator/check/referer">
+                          <img style="border:0;height:22px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!">
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div></form>
+
+
+
+
+</body>
+</html>
